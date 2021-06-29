@@ -23,7 +23,7 @@
     <nav class="navbar mynav" role="navigation" id="navbar">
         <div class="container">
             <a href="{% url 'home' %}" class="navbar-brand mynav">FSociety</a>
-            <ul class="nav navbar-nav nabar-right">
+            <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                     <li><a href="#">Post</a></li>
                     <li><a href="#">Groups</a></li>
@@ -31,8 +31,8 @@
                     <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
                 {% else %}
                     <li><a href="#">Groups</a></li>
-                    <li><a href="{% url 'accounts:login' %">Login</a></li>
-                    <li><a href="{% url 'accounts:signup' %">Sign Up</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                    <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
                 {% endif %}
             </ul>
         </div>
