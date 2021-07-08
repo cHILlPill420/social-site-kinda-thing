@@ -3,6 +3,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.urls import reverse
 from django.views import generic
 from django.contrib import messages
+from groups.models import Group, GroupMember
+from . import models
 # Create your views here.
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
     fields = ('name', 'description')
