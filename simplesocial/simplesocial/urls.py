@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from . import views
+from django.conf import settings
+# from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +29,9 @@ urlpatterns = [
     url(r'^groups/', include("groups.urls", namespace = "groups")),
     url(r'^test/$', views.TestPage.as_view(), name = 'test'),
     url(r'^thanks/$', views.ThanksPage.as_view(), name = 'thanks'),
-]
+] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG == True:
+    import debug_toolbar
+    urlpatterns.append(url(r'^__debug__/',include(debug_toolbar.urls))) 
+
