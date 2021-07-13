@@ -1,0 +1,6 @@
+body{
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(90deg,#51b9ff,#7785ff 52.6%,#b279ff 73.96%,#ff81ed);
+    color: blueviolet;
+}
